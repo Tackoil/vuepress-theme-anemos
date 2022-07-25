@@ -3,9 +3,9 @@
     <div v-if="headpic" class="post-card__img" :style="{backgroundImage: `url(${headpic})`}"> </div>
     <div class="post-card__word">
       <div class="post-card__word__title"> {{data.title}} </div>
-      <div class="post-card__word__description"></div>
+      <div class="post-card__word__description"> {{data.frontmatter.desp }}</div>
       <div class="post-card__word__foot">
-
+        {{data.frontmatter.date}}
       </div>
     </div>
   </div>
@@ -75,6 +75,7 @@ function jumpTo() {
 
   .post-card__word {
     padding: 0.5rem;
+    flex: 1;
     .post-card__word__title {
       color: $text-color;
       font-size: 1.5rem;
@@ -84,6 +85,12 @@ function jumpTo() {
       overflow: hidden;
       text-overflow: ellipsis;
       margin-bottom: 0.25rem;
+    }
+    .post-card__word__description {
+      text-indent: 2em;
+    }
+    .post-card__word__foot {
+      margin-top: 0.5rem;
     }
   }
 }

@@ -5,7 +5,7 @@
       <div class="post-card__word__title"> {{data.title}} </div>
       <div class="post-card__word__description"> {{data.frontmatter.desp }}</div>
       <div class="post-card__word__foot">
-        {{data.frontmatter.date}}
+        {{date}}
       </div>
     </div>
   </div>
@@ -33,6 +33,23 @@ const headpic = computed(() => {
     return themeData.value.headpic;
   } else {
     return "";
+  }
+})
+
+const date = computed(() => {
+  const dateString = props.data.frontmatter.date;
+  try {
+    if (dateString instanceof Date) {
+      return dateString?.toLocaleString();
+    } else if(dateString) {
+      const [step1, _] = dateString.split('T');
+      const [step2, __] = _.split('.');
+      return `${step1} ${step2}`;
+    } else {
+      return ""
+    }
+  } catch {
+    return ""
   }
 })
 
@@ -88,9 +105,15 @@ function jumpTo() {
     }
     .post-card__word__description {
       text-indent: 2em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
     .post-card__word__foot {
       margin-top: 0.5rem;
+      color: $text-dim-color;
     }
   }
 }

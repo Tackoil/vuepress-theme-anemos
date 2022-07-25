@@ -1,6 +1,6 @@
 <template>
   <Header/>
-  <HeadPic ref="headpicRef" :src="headpic"/>
+  <HeadPic ref="headpicRef" :src="headpic" :title="pageTitle"/>
   <PageCard>
     <template #page>
       <slot name="page">
@@ -8,22 +8,25 @@
       </slot>
     </template>
   </PageCard>
-
+  <Tail />
 </template>
 
 <script setup lang="ts">
-import {usePageData, usePageFrontmatter} from "@vuepress/client";
+import {usePageData, usePageFrontmatter, withBase} from "@vuepress/client";
 import Header from "./Header.vue";
 import HeadPic from './HeadPic.vue';
 import PageCard from './PageCard.vue';
-import type {AnemosFrontmatter, AnemosThemeData} from "../types";
+import Tail from './Tail.vue';
+import type {AnemosFrontmatter, AnemosThemeData} from "../../types";
 import {computed, reactive} from "@vue/reactivity";
 import {useThemeData} from "@vuepress/plugin-theme-data/lib/client";
-import {onMounted, provide, watch} from "vue";
+import {onMounted, provide, watch, getCurrentInstance} from "vue";
 import {onScroll} from "../utils/events";
+import {colorfulImg} from "../utils/getThemeColor";
 
 const pageFrontmatter = usePageFrontmatter<AnemosFrontmatter>();
 const themeData = useThemeData<AnemosThemeData>();
+const pageData = usePageData();
 
 const globalState = reactive({
   scrollTop: 0,
@@ -33,7 +36,7 @@ const globalState = reactive({
 
 provide('globalState', globalState);
 
-const pageData = usePageData();
+
 
 function isTop() {
   globalState.scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
@@ -54,6 +57,16 @@ const headpic = computed(() => {
   }
 })
 
+const pageTitle = computed(() => {
+  if (pageData.value.title && pageData.value.path !== '/') {
+    return pageData.value.title;
+  } else if (themeData.value.subtitle) {
+    return themeData.value.subtitle;
+  } else {
+    return "";
+  }
+})
+
 function setPageOffset() {
   if (pageData.value.path === '/') {
     globalState.pageOffset = 0;
@@ -66,15 +79,27 @@ function setPageOffset() {
 
 watch(() => pageData.value.path, setPageOffset);
 
+// async function setThemeColor() {
+//   const color = await colorfulImg(headpic.value);
+//   console.log(color);
+//   document.body.style.backgroundColor = `rgb(${color.r}, ${color.g}, ${color.b})`
+// }
+// watch(() => headpic.value, setThemeColor);
+
+
 
 </script>
 
 <style lang="scss">
-@import "../assets/css/global.scss";
+@import "../assets/css/global";
 @import "../assets/css/iconfont.css";
+@import "../assets/css/variable";
+body {
+  transition: background-color .7s;
+}
 
 :root {
-  --nprogress-color: rgba(109, 175, 164, 0.9);
+  --nprogress-color: $main-color;
   --nprogress-z-index: 1031;
 }
 

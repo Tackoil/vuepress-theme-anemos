@@ -18,7 +18,7 @@ import {useSiteData} from '@vuepress/client'
 import {useThemeData} from '@vuepress/plugin-theme-data/lib/client'
 import {inject} from 'vue';
 import {useRouter} from 'vue-router';
-import type {AnemosThemeData} from '../types';
+import type {AnemosThemeData} from '../../types';
 
 const router = useRouter();
 
@@ -36,6 +36,8 @@ function jumpTo(url: string) {
 </script>
 
 <style lang="scss">
+@import "../assets/css/variable";
+
 .nav-bar {
   position: fixed;
   top: 0;
@@ -44,7 +46,7 @@ function jumpTo(url: string) {
   height: 55px;
   width: 100%;
   padding: 5px 10px;
-  color: #EEE;
+  color: $text-white;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
   display: flex;
   align-items: center;
@@ -87,7 +89,8 @@ function jumpTo(url: string) {
 
 .nav-bar--scroll {
   height: 40px;
-  background: rgba(109, 175, 164, 0.9);
+  background: rgba(109, 175, 164);
+  opacity: 0.9;
   backdrop-filter: blur(2px);
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
   -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);

@@ -1,5 +1,5 @@
 <template>
-  <div class="page-card__container" :style="{transform: `translateY(-${globalState.pageOffset}vh)`}">
+  <div class="page-card__container" :style="{transform: `translateY(-${globalState.pageOffset}vh)`, marginBottom: `-${globalState.pageOffset}vh`}">
     <div class="page-card">
       <slot name="page"></slot>
     </div>
@@ -29,8 +29,6 @@ const globalState = inject('globalState');
   padding: 48px 96px;
   z-index: 200;
   box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
-
-
 }
 
 </style>

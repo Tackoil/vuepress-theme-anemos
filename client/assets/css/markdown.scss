@@ -1,11 +1,19 @@
+@import "variable";
+@import "github_markdown";
+
 .markdown-body {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: #3b314e;
+  color: $text-color;
+
+  > p, ul {
+    margin-inline: 0.5em;
+  }
+
 
   & > h1, h2 {
-    border-bottom-color: #112c2b;
+    border-bottom-color: $line-dim-color;
   }
 
   & > h1, h2, h3, h4, h5, h6 {
@@ -13,6 +21,17 @@
     font-weight: bold;
     margin-bottom: .75em;
     margin-top: 2em;
+
+    .header-anchor {
+      margin-left: -1em;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    &:hover .header-anchor {
+      opacity: 1;
+    }
   }
 
   &:focus {
@@ -20,7 +39,7 @@
   }
 
   a {
-    color: #dc845e;
+    color: $main-color;
   }
 
   strong {
@@ -29,33 +48,44 @@
 
   code {
     tab-size: 4;
-    background-color: #f5faf0;
+    display: inline;
+    background-color: $background-dim-color;
     transition: background-color .2s ease-in-out;
   }
 
   table {
+    border-color: $line-dim-color;
+
     tr {
-      background-color: #f5faf0;
+      background-color: $background-dim-color;
       transition: background-color .2s ease-in-out;
     }
 
     tr:nth-child(2n) {
-      background-color: #f5faf0;
+      background-color: $background-dim-color;
       transition: background-color .2s ease-in-out;
     }
 
     th, td {
-      border-color: #112c2b;
+      border-color: $line-dim-color;
       transition: border-color .2s ease-in-out;
     }
   }
 
-  p > img, p > a, figure > img, figure > a > img {
+  p > img, figure > img, figure > a > img {
     max-width: 90%;
     margin: 1.5rem auto;
     display: block;
     border-radius: 4px;
     background-color: transparent;
+  }
+
+  blockquote {
+    color: $text-dim-color;
+  }
+
+  ul {
+    padding-inline-start: 1em;
   }
 
 
@@ -68,5 +98,15 @@
     outline: none
   }
 
+  .footnote-item {
+    margin: 0;
+    padding: 0;
+  }
 
+}
+
+.markdown-body--indent {
+  > p {
+    text-indent: 2em;
+  }
 }

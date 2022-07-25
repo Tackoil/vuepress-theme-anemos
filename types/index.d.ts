@@ -2,6 +2,7 @@ import type { ThemeData } from "@vuepress/plugin-theme-data"
 
 type AnemosConfig = {
     navs: { name: string, path: string, icon: string }[],
+    subtitle: string,
     headpic? : string,
     indent?: boolean,
 }

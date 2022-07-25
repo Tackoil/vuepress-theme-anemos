@@ -1,11 +1,10 @@
 <template>
   <div class="head-pic" ref="headpicContainer" :style="{transform: `translateY(${picOffset}px)`}">
-    <div class="head-pic__title" :style="{transform: `translateY(-${globalState.pageOffset / 2}vh)`}"> {{pageData.title}} </div>
+    <div class="head-pic__title" :style="{transform: `translateY(-${globalState.pageOffset / 2}vh)`}"> {{title}} </div>
     <div class="head-pic__mask"></div>
     <transition name="slide">
-      <img :src="src" class="head-pic__pic" :key="src" :style="{filter: `blur(${blurCount}px)`}"/>
+      <div class="head-pic__pic" :key="src" :style="{filter: `blur(${blurCount}px)`, backgroundImage: `url(${src})`}"/>
     </transition>
-
   </div>
 </template>
 
@@ -13,16 +12,20 @@
 import {computed} from '@vue/reactivity';
 import {inject} from 'vue';
 import {usePageData} from "@vuepress/client";
+import {useThemeData} from "@vuepress/plugin-theme-data/lib/client";
+import {AnemosThemeData} from "../../types";
 
 
 type Props = {
   src: string,
+  title: string,
 }
 const props = defineProps<Props>();
 
 const globalState = inject('globalState')
 
 const pageData = usePageData();
+const themeData = useThemeData<AnemosThemeData>();
 
 const blurCount = computed(() => {
   const start = 30;
@@ -56,6 +59,8 @@ const picOffset =  computed(() => {
 </script>
 
 <style lang="scss">
+@import "../assets/css/variable";
+
 .head-pic {
   width: 100%;
   height: 100vh;
@@ -72,7 +77,7 @@ const picOffset =  computed(() => {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    color: #EEE;
+    color: $text-white;
     z-index: 10;
     transition: transform .7s;
   }
@@ -88,7 +93,10 @@ const picOffset =  computed(() => {
     position: absolute;
     width: 100%;
     height: 100vh;
-    object-fit: cover;
+    //object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     z-index: -1; // for transform behind the parent box
   }
 

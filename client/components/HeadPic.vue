@@ -9,11 +9,12 @@
 </template>
 
 <script setup lang="ts">
-import {computed} from '@vue/reactivity';
-import {inject} from 'vue';
+import {computed, ref} from '@vue/reactivity';
+import {inject, onMounted, onUnmounted} from 'vue';
 import {usePageData} from "@vuepress/client";
 import {useThemeData} from "@vuepress/plugin-theme-data/lib/client";
 import {AnemosThemeData} from "../../types";
+import { update } from 'lodash';
 
 
 type Props = {
@@ -27,9 +28,24 @@ const globalState = inject('globalState')
 const pageData = usePageData();
 const themeData = useThemeData<AnemosThemeData>();
 
+const windowHeight = ref(0);
+
+function updateHeight() {
+  windowHeight.value = window.innerHeight;
+}
+
+onMounted(() => {
+  updateHeight();
+  window.addEventListener('resize', updateHeight);
+})
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateHeight);
+})
+
 const blurCount = computed(() => {
   const start = 30;
-  const end =  window.innerHeight;
+  const end = windowHeight.value;
   const maxCount = 20;
   if (globalState.scrollTop < start) {
     return 0;
@@ -44,7 +60,7 @@ const picOffset =  computed(() => {
   const minCount = 0;
   const maxCount = 64;
   const start = 0;
-  const end = window.innerHeight * maxCount / 100;
+  const end = windowHeight * maxCount / 100;
   if (globalState.scrollTop < start) {
     return 0;
   } else if (globalState.scrollTop > end) {

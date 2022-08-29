@@ -14,7 +14,7 @@
 <script setup lang="ts">
 import {PageData} from "vuepress";
 import {computed} from "@vue/reactivity";
-import {useThemeData} from "@vuepress/plugin-theme-data/lib/client";
+import {useThemeData} from "@vuepress/plugin-theme-data/client";
 import {AnemosThemeData} from "../../types";
 import {useRouter} from "vue-router";
 

@@ -19,7 +19,7 @@ import PageCard from './PageCard.vue';
 import Tail from './Tail.vue';
 import type {AnemosFrontmatter, AnemosThemeData} from "../../types";
 import {computed, reactive} from "@vue/reactivity";
-import {useThemeData} from "@vuepress/plugin-theme-data/lib/client";
+import {useThemeData} from "@vuepress/plugin-theme-data/client";
 import {onMounted, provide, watch, getCurrentInstance} from "vue";
 import {onScroll} from "../utils/events";
 import {colorfulImg} from "../utils/getThemeColor";

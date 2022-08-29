@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import {useSiteData} from '@vuepress/client'
-import {useThemeData} from '@vuepress/plugin-theme-data/lib/client'
+import {useThemeData} from '@vuepress/plugin-theme-data/client'
 import {inject} from 'vue';
 import {useRouter} from 'vue-router';
 import type {AnemosThemeData} from '../../types';

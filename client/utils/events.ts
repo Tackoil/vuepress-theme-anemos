@@ -1,6 +1,6 @@
-import { debounce } from 'lodash'
+import _ from 'lodash'
 
 export function onScroll(fn: (e:Event) => void) {
-    window.addEventListener('scroll', debounce(fn, 10));
+    window.addEventListener('scroll', _.debounce(fn, 10));
 }
 

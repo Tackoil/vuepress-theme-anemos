@@ -12,7 +12,7 @@
 import {computed, ref} from '@vue/reactivity';
 import {inject, onMounted, onUnmounted} from 'vue';
 import {usePageData} from "@vuepress/client";
-import {useThemeData} from "@vuepress/plugin-theme-data/lib/client";
+import {useThemeData} from "@vuepress/plugin-theme-data/client";
 import {AnemosThemeData} from "../../types";
 import { update } from 'lodash';
 

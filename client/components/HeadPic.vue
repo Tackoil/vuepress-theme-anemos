@@ -60,7 +60,7 @@ const picOffset =  computed(() => {
   const minCount = 0;
   const maxCount = 64;
   const start = 0;
-  const end = windowHeight * maxCount / 100;
+  const end = windowHeight.value * maxCount / 100;
   if (globalState.scrollTop < start) {
     return 0;
   } else if (globalState.scrollTop > end) {

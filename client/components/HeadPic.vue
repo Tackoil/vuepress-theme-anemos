@@ -129,12 +129,12 @@ const picOffset =  computed(() => {
 }
 
 .slide-leave-to {
-  transform: translateY(-50%);
+  transform: translateY(50%);
   opacity: 0;
 }
 
 .slide-enter-from {
-  transform: translateY(50%);
+  transform: translateY(-50%);
   opacity: 0;
 }
 

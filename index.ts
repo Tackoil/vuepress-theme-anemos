@@ -14,7 +14,7 @@ export const anemosTheme = ({
 }: AnemosConfig) => {
     return {
         name: 'vuepress-theme-anemos',
-        clientConfigFile: path.resolve(__dirname, 'client/client.js'),
+        clientConfigFile: path.resolve(__dirname, 'client/client.ts'),
         plugins: [
             themeDataPlugin({
                 themeData: {

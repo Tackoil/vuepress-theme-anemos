@@ -20,9 +20,10 @@ import Tail from './Tail.vue';
 import type {AnemosFrontmatter, AnemosThemeData} from "../../types";
 import {computed, reactive} from "@vue/reactivity";
 import {useThemeData} from "@vuepress/plugin-theme-data/client";
-import {onMounted, provide, watch, getCurrentInstance} from "vue";
+import {onMounted, provide, watch,} from "vue";
 import {onScroll} from "../utils/events";
 import {colorfulImg} from "../utils/getThemeColor";
+import { useRouter } from "vue-router";
 
 const pageFrontmatter = usePageFrontmatter<AnemosFrontmatter>();
 const themeData = useThemeData<AnemosThemeData>();
@@ -35,8 +36,6 @@ const globalState = reactive({
 })
 
 provide('globalState', globalState);
-
-
 
 function isTop() {
   globalState.scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
@@ -53,7 +52,7 @@ const headpic = computed(() => {
   } else if (themeData.value.headpic) {
     return themeData.value.headpic
   } else {
-    return "https://tackoil.github.io/img/bg/natsumi23.jpg";
+    return "https://tackoil.github.io/headpics/natsumi2.3.jpg";
   }
 })
 
@@ -94,6 +93,7 @@ watch(() => pageData.value.path, setPageOffset);
 @import "../assets/css/global";
 @import "../assets/css/iconfont.css";
 @import "../assets/css/variable";
+
 body {
   transition: background-color .7s;
 }

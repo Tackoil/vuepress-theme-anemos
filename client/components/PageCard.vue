@@ -31,4 +31,10 @@ const globalState = inject('globalState');
   box-shadow: 0 12px 15px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
 }
 
+@media (max-width: 767px) {
+  .page-card {
+    padding: 3rem 1.5rem;
+  }
+}
+
 </style>

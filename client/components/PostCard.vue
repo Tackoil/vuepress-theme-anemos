@@ -12,11 +12,11 @@
 </template>
 
 <script setup lang="ts">
-import {PageData} from "vuepress";
-import {computed} from "@vue/reactivity";
-import {useThemeData} from "@vuepress/plugin-theme-data/client";
-import {AnemosThemeData} from "../../types";
-import {useRouter} from "vue-router";
+import { PageData } from "vuepress";
+import { computed } from "@vue/reactivity";
+import { useThemeData } from "@vuepress/plugin-theme-data/client";
+import { AnemosThemeData } from "../../types";
+import { useRouter } from "vue-router";
 
 interface Props {
   data: PageData
@@ -41,7 +41,7 @@ const date = computed(() => {
   try {
     if (dateString instanceof Date) {
       return dateString?.toLocaleString();
-    } else if(dateString) {
+    } else if (dateString) {
       const [step1, _] = dateString.split('T');
       const [step2, __] = _.split('.');
       return `${step1} ${step2}`;
@@ -67,7 +67,7 @@ function jumpTo() {
   display: flex;
   height: 160px;
   margin: 1.25rem 0;
-  background-color: rgba(255,255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
   box-shadow: none;
   transition: background-color 0.7s;
 
@@ -86,13 +86,14 @@ function jumpTo() {
     background-size: cover;
     box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
     border-radius: 0.25rem;
-    margin:0 15px;
+    margin-right: 15px;
     transition: box-shadow .7s;
   }
 
   .post-card__word {
     padding: 0.5rem;
     flex: 1;
+
     .post-card__word__title {
       color: $text-color;
       font-size: 1.5rem;
@@ -103,6 +104,7 @@ function jumpTo() {
       text-overflow: ellipsis;
       margin-bottom: 0.25rem;
     }
+
     .post-card__word__description {
       text-indent: 2em;
       overflow: hidden;
@@ -111,9 +113,34 @@ function jumpTo() {
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
     }
+
     .post-card__word__foot {
       margin-top: 0.5rem;
       color: $text-dim-color;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .post-card {
+    margin-bottom: 2rem;
+    display: block;
+    height: auto;
+    border-bottom: solid 1px $line-dim-color;
+
+    .post-card__img {
+      height: 150px;
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .post-card__word__title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 0.25rem;
     }
   }
 }

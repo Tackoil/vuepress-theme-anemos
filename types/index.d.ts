@@ -10,7 +10,7 @@ type AnemosLink = {
 type AnemosConfig = {
     navs: { name: string, path: string, icon: string }[],
     subtitle: string,
-    headpic? : string,
+    headpic?: string,
     indent?: boolean,
 }
 

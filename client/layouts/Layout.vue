@@ -9,16 +9,16 @@
 </template>
 
 <script setup lang="ts">
+import { usePageData } from "@vuepress/client";
 import Common from '../components/Common.vue';
-import {usePageData} from "@vuepress/client";
 import HomePage from "./HomePage.vue";
-import PostPage from "./PostPage.vue";
 import LinksPage from './LinksPage.vue';
+import PostPage from "./PostPage.vue";
 
 const pageData = usePageData();
 
-</script>
 
-<style lang="scss">
 
-</style>
+<style lang="scss" >
+
+  </style>

@@ -1,6 +1,6 @@
 <template>
-  <Header/>
-  <HeadPic ref="headpicRef" :src="headpic" :title="pageTitle"/>
+  <Header />
+  <HeadPic ref="headpicRef" :src="headpic" :title="pageTitle" />
   <PageCard>
     <template #page>
       <slot name="page">
@@ -12,18 +12,16 @@
 </template>
 
 <script setup lang="ts">
-import {usePageData, usePageFrontmatter, withBase} from "@vuepress/client";
+import { computed, reactive } from "@vue/reactivity";
+import { usePageData, usePageFrontmatter } from "@vuepress/client";
+import { useThemeData } from "@vuepress/plugin-theme-data/client";
+import { onMounted, provide, watch } from "vue";
+import type { AnemosFrontmatter, AnemosThemeData } from "../../types";
+import { onScroll } from "../utils/events";
 import Header from "./Header.vue";
 import HeadPic from './HeadPic.vue';
 import PageCard from './PageCard.vue';
 import Tail from './Tail.vue';
-import type {AnemosFrontmatter, AnemosThemeData} from "../../types";
-import {computed, reactive} from "@vue/reactivity";
-import {useThemeData} from "@vuepress/plugin-theme-data/client";
-import {onMounted, provide, watch,} from "vue";
-import {onScroll} from "../utils/events";
-import {colorfulImg} from "../utils/getThemeColor";
-import { useRouter } from "vue-router";
 
 const pageFrontmatter = usePageFrontmatter<AnemosFrontmatter>();
 const themeData = useThemeData<AnemosThemeData>();
@@ -102,5 +100,4 @@ body {
   --nprogress-color: $main-color;
   --nprogress-z-index: 1031;
 }
-
 </style>

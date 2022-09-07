@@ -1,5 +1,6 @@
 <template>
-  <div class="page-card__container" :style="{transform: `translateY(-${globalState.pageOffset}vh)`, marginBottom: `-${globalState.pageOffset}vh`}">
+  <div class="page-card__container"
+    :style="{transform: `translateY(-${globalState.pageOffset}vh)`, marginBottom: `-${globalState.pageOffset}vh`}">
     <div class="page-card">
       <slot name="page"></slot>
     </div>
@@ -7,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import {inject} from "vue";
+import { inject } from "vue";
 
 const globalState = inject('globalState');
 
@@ -36,5 +37,4 @@ const globalState = inject('globalState');
     padding: 3rem 1.5rem;
   }
 }
-
 </style>

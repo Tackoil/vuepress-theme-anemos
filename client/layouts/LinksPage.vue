@@ -16,8 +16,8 @@
 
 <script setup lang="ts">
 import { usePageFrontmatter } from "@vuepress/client";
-import alterAvatarUrl from "../assets/img/alter_avatar.jpg";
 import type { AnemosFrontmatter } from "../../types";
+import alterAvatarUrl from "../assets/img/alter_avatar.jpg";
 
 const pageFrontmatter = usePageFrontmatter<AnemosFrontmatter>();
 

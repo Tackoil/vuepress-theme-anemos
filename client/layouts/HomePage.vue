@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import {postList} from '@temp/postList'
+import { postList } from '@temp/postList';
 import PostCard from "../components/PostCard.vue";
 
 </script>

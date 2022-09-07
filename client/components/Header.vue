@@ -3,9 +3,8 @@
     <div class="nav-bar-container">
       <span class="nav-bar__title">{{ siteData.title }}</span>
       <div class="button-group">
-        <button v-for="item in themeData.navs" :key="item.path" class="button-group__button"
-                @click="jumpTo(item.path)">
-          <i :class="`iconfont ${item.icon}`"/>
+        <button v-for="item in themeData.navs" :key="item.path" class="button-group__button" @click="jumpTo(item.path)">
+          <i :class="`iconfont ${item.icon}`" />
           <span>{{ item.name }}</span>
         </button>
       </div>
@@ -14,11 +13,11 @@
 </template>
 
 <script setup lang="ts">
-import {useSiteData} from '@vuepress/client'
-import {useThemeData} from '@vuepress/plugin-theme-data/client'
-import {inject} from 'vue';
-import {useRouter} from 'vue-router';
-import type {AnemosThemeData} from '../../types';
+import { useSiteData } from '@vuepress/client';
+import { useThemeData } from '@vuepress/plugin-theme-data/client';
+import { inject } from 'vue';
+import { useRouter } from 'vue-router';
+import type { AnemosThemeData } from '../../types';
 
 const router = useRouter();
 

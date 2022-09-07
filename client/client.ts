@@ -1,7 +1,7 @@
-import { defineClientConfig } from '@vuepress/client'
-import Layout from './layouts/Layout.vue'
-import NotFound from './layouts/NotFound.vue'
+import { defineClientConfig } from '@vuepress/client';
 import { useRouter } from "vue-router";
+import Layout from './layouts/Layout.vue';
+import NotFound from './layouts/NotFound.vue';
 import { scrollTo } from './utils/motion';
 
 export default defineClientConfig({
@@ -9,7 +9,7 @@ export default defineClientConfig({
     Layout,
     NotFound,
   },
-  setup(){
+  setup() {
     const router = useRouter();
     router.beforeEach((from, to, next) => {
       scrollTo(0, next);

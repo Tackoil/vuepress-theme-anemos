@@ -1,10 +1,10 @@
 <template>
   <div class="post-title"> {{pageData.title}} </div>
-  <Content  class="markdown-body markdown-body--indent"></Content>
+  <Content class="markdown-body markdown-body--indent"></Content>
 </template>
 
 <script setup lang="ts">
-import {usePageData} from "@vuepress/client";
+import { usePageData } from "@vuepress/client";
 
 const pageData = usePageData();
 </script>

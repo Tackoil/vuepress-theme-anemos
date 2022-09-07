@@ -3,19 +3,14 @@
     <div class="head-pic__title" :style="{transform: `translateY(-${globalState.pageOffset / 2}vh)`}"> {{title}} </div>
     <div class="head-pic__mask"></div>
     <transition name="slide">
-      <div class="head-pic__pic" :key="src" :style="{filter: `blur(${blurCount}px)`, backgroundImage: `url(${src})`}"/>
+      <div class="head-pic__pic" :key="src" :style="{filter: `blur(${blurCount}px)`, backgroundImage: `url(${src})`}" />
     </transition>
   </div>
 </template>
 
 <script setup lang="ts">
-import {computed, ref} from '@vue/reactivity';
-import {inject, onMounted, onUnmounted} from 'vue';
-import {usePageData} from "@vuepress/client";
-import {useThemeData} from "@vuepress/plugin-theme-data/client";
-import {AnemosThemeData} from "../../types";
-import { update } from 'lodash';
-
+import { computed, ref } from '@vue/reactivity';
+import { inject, onMounted, onUnmounted } from 'vue';
 
 type Props = {
   src: string,
@@ -23,10 +18,7 @@ type Props = {
 }
 const props = defineProps<Props>();
 
-const globalState = inject('globalState')
-
-const pageData = usePageData();
-const themeData = useThemeData<AnemosThemeData>();
+const globalState = inject('globalState') as any
 
 const windowHeight = ref(0);
 
@@ -56,7 +48,7 @@ const blurCount = computed(() => {
   }
 })
 
-const picOffset =  computed(() => {
+const picOffset = computed(() => {
   const minCount = 0;
   const maxCount = 64;
   const start = 0;
@@ -67,7 +59,7 @@ const picOffset =  computed(() => {
     return maxCount;
   } else {
     return (globalState.scrollTop - start) / (end - start) *
-        (maxCount - minCount) + minCount;
+      (maxCount - minCount) + minCount;
   }
 })
 
@@ -119,7 +111,8 @@ const picOffset =  computed(() => {
 
 }
 
-.slide-enter-active, .slide-leave-active {
+.slide-enter-active,
+.slide-leave-active {
   transition: all .7s;
 }
 
@@ -142,6 +135,4 @@ const picOffset =  computed(() => {
   transform: translateY(0);
   opacity: 1;
 }
-
-
 </style>

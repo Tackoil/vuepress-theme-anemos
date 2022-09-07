@@ -12,11 +12,11 @@
 </template>
 
 <script setup lang="ts">
-import { PageData } from "vuepress";
 import { computed } from "@vue/reactivity";
 import { useThemeData } from "@vuepress/plugin-theme-data/client";
-import { AnemosThemeData } from "../../types";
 import { useRouter } from "vue-router";
+import { PageData } from "vuepress";
+import { AnemosThemeData } from "../../types";
 
 interface Props {
   data: PageData

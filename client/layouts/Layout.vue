@@ -17,8 +17,8 @@ import PostPage from "./PostPage.vue";
 
 const pageData = usePageData();
 
+</script>
 
+<style lang="scss">
 
-<style lang="scss" >
-
-  </style>
+</style>

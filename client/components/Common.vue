@@ -16,8 +16,10 @@ import { computed, reactive } from "@vue/reactivity";
 import { usePageData, usePageFrontmatter } from "@vuepress/client";
 import { useThemeData } from "@vuepress/plugin-theme-data/client";
 import { onMounted, provide, watch } from "vue";
+import { useRouter } from "vue-router";
 import type { AnemosFrontmatter, AnemosThemeData } from "../../types";
 import { onScroll } from "../utils/events";
+import { scrollTo } from "../utils/motion";
 import Header from "./Header.vue";
 import HeadPic from './HeadPic.vue';
 import PageCard from './PageCard.vue';
@@ -26,6 +28,8 @@ import Tail from './Tail.vue';
 const pageFrontmatter = usePageFrontmatter<AnemosFrontmatter>();
 const themeData = useThemeData<AnemosThemeData>();
 const pageData = usePageData();
+
+const router = useRouter();
 
 const globalState = reactive({
   scrollTop: 0,
@@ -42,6 +46,9 @@ function isTop() {
 onMounted(() => {
   onScroll(isTop);
   setPageOffset();
+  router.beforeEach((from, to, next) => {
+    scrollTo(0, next);
+  });
 })
 
 const headpic = computed(() => {

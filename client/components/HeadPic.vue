@@ -99,7 +99,8 @@ const picOffset = computed(() => {
 
   .head-pic__pic {
     position: absolute;
-    width: 100%;
+    width: 104vw;
+    margin-left: -2vw;
     height: 100vh;
     //object-fit: cover;
     background-repeat: no-repeat;

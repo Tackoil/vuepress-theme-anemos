@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.build.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "baseUrl": ".",
+    "paths": {
+      "@theme/*": ["./src/client/components/*"]
+    },
+  },
+  "include": [
+    "./src"
+  ]
+}

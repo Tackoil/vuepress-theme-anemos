@@ -1,0 +1,13 @@
+node_modules
+yarn-error.log
+.idea
+.DS_Store
+.vscode
+lib
+libs
+dist
+docs/.vuepress/.cache
+docs/.vuepress/.temp
+packages/**/tsconfig.build.tsbuildinfo
+packages/**/tsconfig.cjs.tsbuildinfo
+packages/**/tsconfig.esm.tsbuildinfo

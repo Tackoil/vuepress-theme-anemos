@@ -1,0 +1,44 @@
+{
+	"private": true,
+	"type": "module",
+	"workspaces": [
+		"packages/vuepress-theme-anemos"
+	],
+	"scripts": {
+		"build:all": "pnpm -r --stream build",
+		"build:copy": "pnpm --parallel --stream copy",
+		"build:tsc": "tsc",
+		"build": "vuepress build docs",
+		"docs:dev": "DEBUG=vuepress* vuepress dev docs",
+		"lint": "eslint --ext .cjs,.js,.ts,.vue .",
+		"dev": "pnpm build:all --watch & pnpm build:copy --watch & pnpm docs:dev"
+	},
+	"lint-staged": {
+		"*.{cjs,js,ts,vue}": "eslint --fix",
+		"*.{json,yml,css,scss}": "prettier --write",
+		"package.json": "sort-package-json"
+	},
+	"devDependencies": {
+		"@vuepress/client": "^2.0.0-beta.50",
+		"cpx": "^1.5.0",
+		"eslint": "^8.24.0",
+		"eslint-config-vuepress": "^4.0.3",
+		"eslint-config-vuepress-typescript": "^4.0.3",
+		"husky": "^8.0.1",
+		"lint-staged": "^13.0.3",
+		"prettier": "^2.7.1",
+		"typescript": "4.8.2",
+		"vue": "^3.2.37",
+		"vuepress": "2.0.0-beta.51",
+		"vuepress-theme-anemos": "workspace:*"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"ignoreMissing": [
+				"eslint-plugin-import",
+				"eslint-plugin-n",
+				"eslint-plugin-promise"
+			]
+		}
+	}
+}

@@ -101,6 +101,10 @@
   summary {
     outline: none
   }
+  
+  mark {
+    background-color: rgba($main-color, 0.5);
+  }
 
   .footnote-item {
     margin: 0;

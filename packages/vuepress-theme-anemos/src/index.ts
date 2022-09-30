@@ -22,8 +22,8 @@ export const anemosTheme = ({ navs, subtitle }: AnemosConfig): Theme => {
       }),
       nprogressPlugin(),
       mdEnhancePlugin({
-        // @ts-expect-error Tex is not included in mdEnhancePlugin
-        tex: true,
+        katex: true,
+        mark: true,
         footnote: true,
       }),
       shikiPlugin(),

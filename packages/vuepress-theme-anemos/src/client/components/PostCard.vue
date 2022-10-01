@@ -81,7 +81,7 @@ function jumpTo(): void {
     background-color: rgba($main-color, 0.1);
 
     .post-card__img {
-      box-shadow: none;
+      box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
     }
   }
 
@@ -90,7 +90,7 @@ function jumpTo(): void {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
+    box-shadow: none;
     border-radius: 0.25rem;
     margin-right: 15px;
     transition: box-shadow 0.7s;

@@ -4,7 +4,9 @@ import { useThemeData } from "@vuepress/plugin-theme-data/client";
 import { inject } from "vue";
 import { useRouter } from "vue-router";
 import type { AnemosThemeData } from "../../types/index.js";
+import { useBreakpoints } from "../utils/hooks/media.js";
 import { globalStateKey } from "./Keys.js";
+import ShrinkTransition from "./Transitions/ShrinkTransition.vue";
 
 const router = useRouter();
 
@@ -13,6 +15,8 @@ const siteData = useSiteData();
 const themeData = useThemeData<AnemosThemeData>();
 
 const globalState = inject(globalStateKey);
+
+const { type } = useBreakpoints();
 
 function jumpTo(url: string): void {
   router.push(url);
@@ -34,7 +38,9 @@ function jumpTo(url: string): void {
           @click="jumpTo(item.path)"
         >
           <i :class="`iconfont ${item.icon}`" />
-          <span>{{ item.name }}</span>
+          <ShrinkTransition :width="40" :vif="type !== 'xs'">
+            <span>{{ item.name }}</span>
+          </ShrinkTransition>
         </button>
       </div>
     </div>
@@ -46,17 +52,15 @@ function jumpTo(url: string): void {
 
 .nav-bar {
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: 300;
   height: 55px;
-  width: 100%;
+  width: calc(100% - 20px);
   padding: 5px 10px;
   color: $text-white;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
   display: flex;
   align-items: center;
-  transition: all 0.5s;
+  transition: all 0.7s;
 
   .nav-bar-container {
     display: flex;
@@ -81,13 +85,14 @@ function jumpTo(url: string): void {
   .button-group__button {
     height: 40px;
     color: inherit;
-    margin-left: 4px;
     display: flex;
     align-items: center;
+    margin-right: 8px;
+    padding: 0 4px;
 
     .iconfont {
       font-size: 20px;
-      margin-right: 4px;
+      margin: 0 4px;
     }
   }
 }

@@ -2,7 +2,10 @@
 
 <template>
   <footer class="footer">
-    <div class="footer-content">Base VuePress by Anemos</div>
+    <div class="footer-content">
+      Base VuePress by
+      <a href="https://github.com/Tackoil/vuepress-theme-anemos">Anemos</a>
+    </div>
   </footer>
 </template>
 
@@ -15,5 +18,9 @@
   text-align: center;
   color: $text-dim-color;
   background-color: transparent;
+
+  a {
+    color: inherit;
+  }
 }
 </style>

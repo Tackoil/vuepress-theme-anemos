@@ -1,5 +1,5 @@
 import { nprogressPlugin } from "@vuepress/plugin-nprogress";
-import { shikiPlugin } from "@vuepress/plugin-shiki";
+import { prismjsPlugin } from "@vuepress/plugin-prismjs";
 import { themeDataPlugin } from "@vuepress/plugin-theme-data";
 import { getDirname, path } from "@vuepress/utils";
 import type { Theme } from "vuepress";
@@ -26,8 +26,14 @@ export const anemosTheme = ({ navs, subtitle }: AnemosConfig): Theme => {
         mark: true,
         footnote: true,
       }),
-      shikiPlugin(),
+      prismjsPlugin({}),
     ],
+    extendsMarkdownOptions: (markdownOptions, app) => {
+      // modify code options
+      markdownOptions.code ??= {};
+      markdownOptions.code.lineNumbers = true;
+      markdownOptions.code.highlightLines = true;
+    },
     onPrepared: (app) => {
       generatePostList(app);
     },

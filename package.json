@@ -19,7 +19,7 @@
 		"package.json": "sort-package-json"
 	},
 	"devDependencies": {
-		"@vuepress/client": "^2.0.0-beta.50",
+		"@vuepress/client": "2.0.0-beta.51",
 		"cpx": "^1.5.0",
 		"eslint": "^8.24.0",
 		"eslint-config-vuepress": "^4.0.3",

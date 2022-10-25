@@ -12,6 +12,7 @@ const pageData = usePageData();
 <style lang="scss">
 @import "../assets/css/markdown";
 @import "../assets/css/variable";
+@import "../assets/css/code.scss";
 
 .post-title {
   font-size: 12px;

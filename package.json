@@ -8,6 +8,7 @@
 		"build": "pnpm build:all && pnpm build:copy",
 		"dev": "pnpm build:all --watch & pnpm build:copy --watch & pnpm docs:dev",
 		"lint": "eslint --ext .cjs,.js,.ts,.vue .",
+		"release:pre": "pnpm build && bash commands/pre-release.sh",
 		"build:all": "pnpm -r --stream build",
 		"build:copy": "pnpm --parallel --stream copy",
 		"build:tsc": "tsc",

@@ -6,7 +6,10 @@ import alterAvatarUrl from "../assets/img/alter_avatar.jpg";
 const pageFrontmatter = usePageFrontmatter<AnemosFrontmatter>();
 
 function jumpTo(link): void {
-  window.open(link, "_blank");
+  const a = document.createElement("a");
+  a.setAttribute("href", link);
+  a.setAttribute("target", "_blank");
+  a.click();
 }
 
 function fallback(event: Event): void {

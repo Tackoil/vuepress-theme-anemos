@@ -7,7 +7,7 @@ export function useBreakpoints(): {
   width: ComputedRef<number>;
   type: ComputedRef<"xs" | "md" | "lg">;
 } {
-  const windowWidth = ref(window.innerWidth);
+  const windowWidth = ref(1200);
 
   const onWidthChange = (): void => {
     windowWidth.value = window.innerWidth;

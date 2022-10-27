@@ -1,5 +1,11 @@
 # vuepress-theme-anemos
 
+## 0.2.0-beta.2
+
+### Patch Changes
+
+- - fix build error about window
+
 ## 0.2.0-beta.1
 
 ### Patch Changes

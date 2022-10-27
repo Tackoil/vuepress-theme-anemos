@@ -2,10 +2,11 @@
   "mode": "exit",
   "tag": "beta",
   "initialVersions": {
-    "vuepress-theme-anemos": "0.2.0-beta.0"
+    "vuepress-theme-anemos": "0.2.0-beta.1"
   },
   "changesets": [
     "brown-years-train",
-    "funny-tigers-work"
+    "funny-tigers-work",
+    "odd-trains-give"
   ]
 }

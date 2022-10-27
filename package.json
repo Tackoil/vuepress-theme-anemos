@@ -5,13 +5,13 @@
 		"packages/vuepress-theme-anemos"
 	],
 	"scripts": {
+		"build": "pnpm build:all && pnpm build:copy",
+		"dev": "pnpm build:all --watch & pnpm build:copy --watch & pnpm docs:dev",
+		"lint": "eslint --ext .cjs,.js,.ts,.vue .",
 		"build:all": "pnpm -r --stream build",
 		"build:copy": "pnpm --parallel --stream copy",
 		"build:tsc": "tsc",
-		"build": "vuepress build docs",
-		"docs:dev": "DEBUG=vuepress* vuepress dev docs",
-		"lint": "eslint --ext .cjs,.js,.ts,.vue .",
-		"dev": "pnpm build:all --watch & pnpm build:copy --watch & pnpm docs:dev"
+		"docs:dev": "DEBUG=vuepress* vuepress dev docs"
 	},
 	"lint-staged": {
 		"*.{cjs,js,ts,vue}": "eslint --fix",
@@ -19,6 +19,7 @@
 		"package.json": "sort-package-json"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^2.25.0",
 		"@vuepress/client": "2.0.0-beta.51",
 		"cpx": "^1.5.0",
 		"eslint": "^8.24.0",

@@ -1,0 +1,10 @@
+{
+  "mode": "exit",
+  "tag": "beta",
+  "initialVersions": {
+    "vuepress-theme-anemos": "0.1.0"
+  },
+  "changesets": [
+    "brown-years-train"
+  ]
+}

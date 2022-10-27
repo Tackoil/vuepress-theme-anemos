@@ -57,7 +57,7 @@ function jumpTo(): void {
     <div class="post-card__word">
       <div class="post-card__word__title">{{ data.title }}</div>
       <div class="post-card__word__description">
-        {{ data.frontmatter.desp }}
+        {{ data.frontmatter.description }}
       </div>
       <div class="post-card__word__foot">
         {{ date }}

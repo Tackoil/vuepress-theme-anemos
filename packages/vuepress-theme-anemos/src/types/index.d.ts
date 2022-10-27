@@ -22,6 +22,5 @@ type AnemosFrontmatter = {
   description: string;
   headpic?: string;
   indent?: boolean;
-  desp?: string;
   links?: AnemosLink[];
 };

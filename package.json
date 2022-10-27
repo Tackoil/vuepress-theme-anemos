@@ -8,11 +8,12 @@
 		"build": "pnpm build:all && pnpm build:copy",
 		"dev": "pnpm build:all --watch & pnpm build:copy --watch & pnpm docs:dev",
 		"lint": "eslint --ext .cjs,.js,.ts,.vue .",
-		"release:pre": "pnpm build && bash commands/pre-release.sh",
+		"release:pre": "pnpm build && pnpm docs:build && bash commands/pre-release.sh && bash commands/deploy.sh",
 		"build:all": "pnpm -r --stream build",
 		"build:copy": "pnpm --parallel --stream copy",
 		"build:tsc": "tsc",
-		"docs:dev": "DEBUG=vuepress* vuepress dev docs"
+		"docs:dev": "DEBUG=vuepress* vuepress dev docs",
+		"docs:build": "vuepress build docs"
 	},
 	"lint-staged": {
 		"*.{cjs,js,ts,vue}": "eslint --fix",

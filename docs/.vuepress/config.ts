@@ -3,6 +3,7 @@ import { anemosTheme } from "vuepress-theme-anemos";
 
 export default defineUserConfig({
   title: "vuepress-theme-anemos",
+  base: "/vuepress-theme-anemos/",
   theme: anemosTheme({
     navs: [
       { name: "Home", path: "/", icon: "icon-home" },

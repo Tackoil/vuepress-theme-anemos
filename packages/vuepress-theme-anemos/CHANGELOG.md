@@ -1,5 +1,11 @@
 # vuepress-theme-anemos
 
+## 0.2.0-beta.3
+
+### Patch Changes
+
+- fix lodash import error
+
 ## 0.2.0-beta.2
 
 ### Patch Changes

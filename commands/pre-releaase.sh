@@ -22,5 +22,5 @@ git push
 git tag -a "v${VERSION}"
 git push origin "v${VERSION}"
 
-# 发布到 dist-tag next 下
-pnpm changeset publish --tag next
+# 发布到 dist-tag 下
+pnpm changeset publish

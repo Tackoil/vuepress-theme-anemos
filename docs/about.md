@@ -48,19 +48,13 @@ pnpm install
 目前的开发方式可能导致无法在网页中显式观察到 TypeScript 的编译错误。开发过程中务必留意命令行中的报错。
 
 ```bash
-pnpm dev
+pnpm project:dev
 ```
 
 ### 编译
 
 ```bash
-pnpm build
-```
-
-### 部署
-
-```bash
-pnpm deploy
+pnpm project:build
 ```
 
 ## 开发计划

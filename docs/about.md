@@ -29,7 +29,7 @@ Anemos 来自于[《WONDER EGG PRIORITY》](https://wonder-egg-priority.com/)特
 
 ### 运行环境
 
-> 以下运行环境仅为本人开发时所使用环境，不代表其他版本无法运行。
+> 以下运行环境仅为作者开发时所使用环境，不代表其他版本无法运行。
 
 - OS: macOS 12.6 (M1)
 - Node.js: v16.17.0
@@ -37,7 +37,7 @@ Anemos 来自于[《WONDER EGG PRIORITY》](https://wonder-egg-priority.com/)特
 
 ### 依赖管理
 
-依赖管理请使用 pnpm 包管理器进行。如需要添加新包，请手动完成 peer dependencies 的安装，以保证相关依赖可以在 `package.json` 中保留记录。
+依赖管理请使用 pnpm 包管理器进行。如需要添加新包，请手动完成 peer dependencies 的安装，以保证相关依赖可以在 `package.json` 中**保留记录**。
 
 ```bash
 pnpm install
@@ -72,6 +72,8 @@ pnpm deploy
 - [ ] 样式：自动获取头图颜色
 
 ……
+
+> 其他功能建议可直接在 issue 部分提出，但是否采纳主要取决于上述对本主题的描述，~~以及作者心情~~。
 
 ## 参考
 

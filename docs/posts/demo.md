@@ -2,7 +2,7 @@
 title: vuepress-theme-anemos demo
 date: 2022-09-26
 headpic: 'https://wonder-egg-priority.com/assets/img/top/main/visual.jpg'
-desp: vuepress-theme-anemos 的测试用例
+description: vuepress-theme-anemos 的测试用例
 ---
 
 > 本文档用来测试 Anemos 的各个功能，主要参考自 [gungnir](https://github.com/Renovamen/vuepress-theme-gungnir)

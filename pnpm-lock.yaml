@@ -35,14 +35,14 @@ importers:
   packages/vuepress-theme-anemos:
     specifiers:
       '@types/lodash': ^4.14.182
+      '@types/lodash-es': ^4.17.6
       '@vue/reactivity': ^3.2.39
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/plugin-nprogress': 2.0.0-beta.51
       '@vuepress/plugin-prismjs': 2.0.0-beta.51
-      '@vuepress/plugin-shiki': 2.0.0-beta.51
       '@vuepress/plugin-theme-data': 2.0.0-beta.51
       '@vuepress/utils': 2.0.0-beta.51
-      lodash: ^4.17.21
+      lodash-es: ^4.17.21
       vue: ^3.2.38
       vue-router: ^4.1.5
       vuepress-plugin-md-enhance: ^2.0.0-beta.87
@@ -51,15 +51,15 @@ importers:
       '@vuepress/client': 2.0.0-beta.51
       '@vuepress/plugin-nprogress': 2.0.0-beta.51
       '@vuepress/plugin-prismjs': 2.0.0-beta.51
-      '@vuepress/plugin-shiki': 2.0.0-beta.51
       '@vuepress/plugin-theme-data': 2.0.0-beta.51
       '@vuepress/utils': 2.0.0-beta.51
-      lodash: 4.17.21
+      lodash-es: 4.17.21
       vue: 3.2.41
       vue-router: 4.1.6_vue@3.2.41
       vuepress-plugin-md-enhance: 2.0.0-beta.113
     devDependencies:
       '@types/lodash': 4.14.186
+      '@types/lodash-es': 4.17.6
 
 packages:
 
@@ -744,6 +744,12 @@ packages:
   /@types/linkify-it/3.0.2:
     resolution: {integrity: sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==}
 
+  /@types/lodash-es/4.17.6:
+    resolution: {integrity: sha512-R+zTeVUKDdfoRxpAryaQNRKk3105Rrgx2CFRClIgRGaqDTdjsm8h6IYA8ir584W3ePzkZfst5xIgDwYrlh9HLg==}
+    dependencies:
+      '@types/lodash': 4.14.186
+    dev: true
+
   /@types/lodash/4.14.186:
     resolution: {integrity: sha512-eHcVlLXP0c2FlMPm56ITode2AgLMSa6aJ05JTTbYbI+7EMkCEE5qk2E41d5g2lCVTqRe0GnnRFurmlCsDODrPw==}
     dev: true
@@ -1253,15 +1259,6 @@ packages:
       prismjs: 1.29.0
     transitivePeerDependencies:
       - supports-color
-
-  /@vuepress/plugin-shiki/2.0.0-beta.51:
-    resolution: {integrity: sha512-Q5sQn91GH7TOUYuSixuptiEDJyAbQhA+7ZEgJzPcQ8Z28X6/b/MoLCJQwJtegHHhqyjvQjFTGzWTJ1fC3adw9g==}
-    dependencies:
-      '@vuepress/core': 2.0.0-beta.51
-      shiki: 0.10.1
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
 
   /@vuepress/plugin-theme-data/2.0.0-beta.51:
     resolution: {integrity: sha512-sfsZRhb7zZATqY1+BXkynZZ7HEZnBZEd4iuEyCNpWEnjwa7/qjPSKJyAb/M0a2SLgN2/UcPdM5URMfE1mV/4QQ==}
@@ -4701,10 +4698,6 @@ packages:
     hasBin: true
     dev: false
 
-  /jsonc-parser/3.2.0:
-    resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
-    dev: false
-
   /jsonfile/4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
@@ -4858,6 +4851,10 @@ packages:
     dependencies:
       p-locate: 5.0.0
     dev: true
+
+  /lodash-es/4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+    dev: false
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -5914,14 +5911,6 @@ packages:
     resolution: {integrity: sha512-8o/QEhSSRb1a5i7TFR0iM4G16Z0vYB2OQVs4G3aAFXjn3T6yEx8AZxy1PgDF7I00LZHYA3WxaSYIf5e5sAX8Rw==}
     dev: true
 
-  /shiki/0.10.1:
-    resolution: {integrity: sha512-VsY7QJVzU51j5o1+DguUd+6vmCmZ5v/6gYu4vyYAhzjuNQU6P/vmSy4uQaOhvje031qQMiW0d2BwgMH52vqMng==}
-    dependencies:
-      jsonc-parser: 3.2.0
-      vscode-oniguruma: 1.6.2
-      vscode-textmate: 5.2.0
-    dev: false
-
   /side-channel/1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
     dependencies:
@@ -6487,14 +6476,6 @@ packages:
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
-
-  /vscode-oniguruma/1.6.2:
-    resolution: {integrity: sha512-KH8+KKov5eS/9WhofZR8M8dMHWN2gTxjMsG4jd04YhpbPR91fUj7rYQ2/XjeHCJWbg7X++ApRIU9NUwM2vTvLA==}
-    dev: false
-
-  /vscode-textmate/5.2.0:
-    resolution: {integrity: sha512-Uw5ooOQxRASHgu6C7GVvUxisKXfSgW4oFlO+aa+PAkgmH89O3CXxEEzNRNtHSqtXFTl0nAC1uYj0GMSH27uwtQ==}
-    dev: false
 
   /vue-demi/0.13.11_vue@3.2.41:
     resolution: {integrity: sha512-IR8HoEEGM65YY3ZJYAjMlKygDQn25D5ajNFNoKh9RSDMQtlzCxtfQjdQgv9jjK+m3377SsJXY8ysq8kLCZL25A==}

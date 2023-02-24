@@ -55,7 +55,7 @@ function fallback(event: Event): void {
   margin: 8px;
   padding: 32px 8px;
   border-radius: 0.25rem;
-  transition: all 0.7s;
+  transition: all 0.3s;
 
   &:hover {
     background-color: $background-dim-color;

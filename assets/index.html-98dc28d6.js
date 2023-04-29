@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-8daa1a0e","path":"/","title":"","lang":"en-US","frontmatter":{"headpic":"https://wonder-egg-priority.com/assets/img/top/main/visual.jpg"},"headers":[]}');export{a as data};

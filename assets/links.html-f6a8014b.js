@@ -1,0 +1,1 @@
+const t=JSON.parse(`{"key":"v-35162c79","path":"/links.html","title":"友链","lang":"en-US","frontmatter":{"title":"友链","links":[{"title":"Tackoil's Website","intro":"We're here.","link":"https://tackoil.github.io/","avatar":"https://tackoil.github.io/headpics/natsumi2.3.jpg"}]},"headers":[]}`);export{t as data};

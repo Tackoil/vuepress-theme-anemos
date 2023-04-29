@@ -97,10 +97,11 @@ watch(() => pageData.value.path, setPageOffset);
 
 body {
   transition: background-color 0.7s;
+  background-color: var(--background-color);
 }
 
 :root {
-  --nprogress-color: $main-color;
+  --nprogress-color: var(--main-color);
   --nprogress-z-index: 1031;
 }
 </style>

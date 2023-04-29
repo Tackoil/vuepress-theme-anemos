@@ -48,7 +48,6 @@ function jumpTo(url: string): void {
 </template>
 
 <style lang="scss">
-@import "../assets/css/variable";
 
 .nav-bar {
   position: fixed;
@@ -56,7 +55,7 @@ function jumpTo(url: string): void {
   height: 55px;
   width: calc(100% - 20px);
   padding: 5px 10px;
-  color: $text-white;
+  color: var(--text-white);
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
   display: flex;
   align-items: center;
@@ -99,7 +98,7 @@ function jumpTo(url: string): void {
 
 .nav-bar--scroll {
   height: 40px;
-  background: rgba(109, 175, 164);
+  background: var(--main-color);
   opacity: 0.9;
   backdrop-filter: blur(2px);
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);

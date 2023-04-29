@@ -41,7 +41,6 @@ function fallback(event: Event): void {
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/css/variable";
 
 .links-container {
   display: grid;
@@ -58,7 +57,7 @@ function fallback(event: Event): void {
   transition: all 0.3s;
 
   &:hover {
-    background-color: $background-dim-color;
+    background-color: var(--background-dim-color);
   }
 
   &__img {
@@ -66,6 +65,7 @@ function fallback(event: Event): void {
     height: 48px;
     border-radius: 24px;
     margin-right: 16px;
+    object-fit: cover;
   }
 
   &__text {
@@ -77,13 +77,14 @@ function fallback(event: Event): void {
     &__title {
       font-weight: bold;
       text-overflow: ellipsis;
+      color: var(--text-color);
       overflow: hidden;
     }
 
     &__intro {
       text-overflow: ellipsis;
       overflow: hidden;
-      color: $text-dim-color;
+      color: var(--text-dim-color);
       font-size: 0.85rem;
     }
   }

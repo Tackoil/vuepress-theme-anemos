@@ -67,7 +67,6 @@ function jumpTo(): void {
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/css/variable";
 
 .post-card {
   display: flex;
@@ -78,7 +77,7 @@ function jumpTo(): void {
   transition: background-color 0.7s;
 
   &:hover {
-    background-color: rgba($main-color, 0.1);
+    background-color: rgba(var(--main-color), 0.1);
 
     .post-card__img {
       box-shadow: 0 5px 11px 0 rgb(0 0 0 / 18%), 0 4px 15px 0 rgb(0 0 0 / 15%);
@@ -101,7 +100,7 @@ function jumpTo(): void {
     flex: 1;
 
     .post-card__word__title {
-      color: $text-color;
+      color: var(--text-color);
       font-size: 1.5rem;
       font-weight: bold;
       line-height: 1.4;
@@ -112,6 +111,7 @@ function jumpTo(): void {
     }
 
     .post-card__word__description {
+      color: var(--text-color);
       text-indent: 2em;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -122,7 +122,7 @@ function jumpTo(): void {
 
     .post-card__word__foot {
       margin-top: 0.5rem;
-      color: $text-dim-color;
+      color: var(--text-dim-color);
     }
   }
 }
@@ -132,7 +132,7 @@ function jumpTo(): void {
     margin-bottom: 2rem;
     display: block;
     height: auto;
-    border-bottom: solid 1px $line-dim-color;
+    border-bottom: solid 1px var(--line-dim-color);
 
     .post-card__img {
       height: 150px;

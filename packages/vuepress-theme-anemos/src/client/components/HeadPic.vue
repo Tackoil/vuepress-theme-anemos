@@ -84,7 +84,6 @@ const picOffset = computed(() => {
 </template>
 
 <style lang="scss">
-@import "../assets/css/variable";
 
 .head-pic {
   width: 100%;
@@ -102,14 +101,14 @@ const picOffset = computed(() => {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    color: $text-white;
+    color: var(--text-white);
     z-index: 10;
     transition: transform 0.7s;
   }
 
   .head-pic__mask {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color:var(--pic-mask);
     height: 100%;
     width: 100%;
   }

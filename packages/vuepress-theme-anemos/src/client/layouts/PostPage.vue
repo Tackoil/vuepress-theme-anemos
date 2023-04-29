@@ -11,14 +11,13 @@ const pageData = usePageData();
 
 <style lang="scss">
 @import "../assets/css/markdown";
-@import "../assets/css/variable";
 @import "../assets/css/code.scss";
 
 .post-title {
   font-size: 12px;
   text-align: center;
-  color: $line-dim-color;
-  border-bottom: 1px solid $line-dim-color;
+  color: var(--line-dim-color);
+  border-bottom: 1px solid var(--line-dim-color);
   padding-bottom: 0.5rem;
   margin-top: -36px;
   margin-bottom: 48px;

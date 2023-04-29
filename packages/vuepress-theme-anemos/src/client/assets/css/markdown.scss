@@ -1,11 +1,10 @@
-@import "variable";
 @import "github_markdown";
 
 .markdown-body {
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
-  color: $text-color;
+  color: var(--text-color);
 
   > p, ul {
     margin-inline: 0.5em;
@@ -16,7 +15,7 @@
   }
 
   & > h2 {
-    border-bottom-color: $line-dim-color;
+    border-bottom-color: var(--line-dim-color);
   }
 
   & h1, h2, h3, h4, h5, h6 {
@@ -43,7 +42,7 @@
   }
 
   a {
-    color: $main-color;
+    color: var(--main-color);
   }
 
   strong {
@@ -53,25 +52,25 @@
   code {
     tab-size: 4;
     display: inline;
-    background-color: $background-dim-color;
+    background-color: var(--background-dim-color);
     transition: background-color .2s ease-in-out;
   }
 
   table {
-    border-color: $line-dim-color;
+    border-color: var(--line-dim-color);
 
     tr {
-      background-color: $background-dim-color;
+      background-color: var(--background-dim-color);
       transition: background-color .2s ease-in-out;
     }
 
     tr:nth-child(2n) {
-      background-color: $background-dim-color;
+      background-color: var(--background-dim-color);
       transition: background-color .2s ease-in-out;
     }
 
     th, td {
-      border-color: $line-dim-color;
+      border-color: var(--line-dim-color);
       transition: border-color .2s ease-in-out;
     }
   }
@@ -85,7 +84,7 @@
   }
 
   blockquote {
-    color: $text-dim-color;
+    color: var(--text-dim-color);
   }
 
   ul {
@@ -103,7 +102,8 @@
   }
   
   mark {
-    background-color: rgba($main-color, 0.5);
+    color: var(--text-color);
+    background-color: var(--mask-color);
   }
 
   .footnote-item {

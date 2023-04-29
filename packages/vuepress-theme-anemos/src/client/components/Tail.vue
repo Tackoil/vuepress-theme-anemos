@@ -10,13 +10,12 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/css/variable";
 
 .footer-content {
   padding-top: 3rem;
   padding-bottom: 1rem;
   text-align: center;
-  color: $text-dim-color;
+  color: var(--text-dim-color);
   background-color: transparent;
 
   a {

@@ -27,7 +27,8 @@ const globalState = inject(globalStateKey);
 
 .page-card {
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: var(--background-color);
+  transition: background-color 0.7s;
   max-width: 1140px;
   margin-left: auto;
   margin-right: auto;

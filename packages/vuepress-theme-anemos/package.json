@@ -1,6 +1,6 @@
 {
     "name": "vuepress-theme-anemos",
-    "version": "0.2.0-beta.3",
+    "version": "0.2.0-beta.4",
     "bugs": {
         "url": "https://github.com/Tackoil/vuepress-theme-anemos/issues"
     },
@@ -14,7 +14,7 @@
         "lib": "lib"
     },
     "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "types": "lib/types/index.d.ts",
     "type": "module",
     "scripts": {
         "build": "tsc --build tsconfig.build.json",
